@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { startSaveNote } from '../../actions/notes'
+import { startSaveNote, startUploading } from '../../actions/notes'
 
 export const NotesAppBar = () => {
   const dispatch = useDispatch()
@@ -12,12 +12,14 @@ export const NotesAppBar = () => {
   }
 
   const handlePictureClick = () => {
-    console.log('pictures')
     document.querySelector('#fileSelector').click()
   }
 
   const handleFileChange = (e) => {
-    console.log(e.target.files)
+    const file = e.target.files[0];
+    if (file) {
+      dispatch( startUploading( file ) )
+    }
   }
 
   return (

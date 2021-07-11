@@ -24,7 +24,7 @@ export const JournalEntry = ({ id, title, body, date, url }) => {
           className="journal__entry-picture"
           style={{
             backgroundSize: 'cover',
-            backgroundImage: 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl5-CODz3KwTsOwMg0drfKK2G3FwVCQy2tUQ&usqp=CAU)'
+            backgroundImage: `url(${url})`
           }}
         ></div>
       }
